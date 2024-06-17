@@ -1,0 +1,19 @@
+﻿
+#!/bin/bash
+
+#Autor Roni Peterson Cunha de Alvarenga
+# PoloDiadema 
+
+
+# Verifica se na localização atual existe algo chamado "bkp" e se este é um diretório
+caminho=`ls | grep bkp`
+if [ -e "bkp" ] && [ -d "bkp" ] ; then
+        echo "Já ha pasta"
+else
+        echo "nao há pasta"
+# Caso não haja, crie a pasta bkp
+        mkdir bkp
+fi
+# Executa o empacotamento e a compactação e adciona sulfixo bak
+tar -zcvf bkp/backup.tar.gz.bak *.txt
+

@@ -1,0 +1,9 @@
+#!/bin/bash
+#Autor Andre Carvalheiro Garcia 
+# PoloDiadema
+chmod +x agenda2
+echo "Insira o Nome do contato" 
+read nome
+echo "Insira o telefone"
+read telefone
+echo $nome >> agenda.dat $telefone >> agenda.dat

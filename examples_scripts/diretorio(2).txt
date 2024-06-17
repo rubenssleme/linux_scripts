@@ -1,0 +1,19 @@
+#!/bin/bash
+#Autor Andre Carvalheiro Garcia 
+# PoloDiadema
+chmod +x sistema
+echo "Digite o nome do diretorio"
+read diretorio
+
+if "$diretorio" | egrep '*\ *' 
+then
+	echo "Digite um unico argumento"
+
+elif [ ! -d "$diretorio" ]
+then
+echo "Entre com um diretório válido !"
+
+else
+echo "$diretorio" | ls -lt 
+
+fi

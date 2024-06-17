@@ -1,0 +1,26 @@
+﻿#!/bin/bash
+ #Autor Adilson Hideaki Akashi # PoloDiadema # diretorio - script para exibir arquivos de um diretório, após receber o nome do diretório como argumento
+
+# exercício de aula de Software Livre TSI UFABC 2014
+# aluno: Adilson Hideaki Akashi
+
+#limpa a tela
+clear
+
+# verifica se o número de argumentos é apenas 1.
+if [ "$#" -eq 1 ]
+
+# se foi digitado apenas um argumento, verifica se o nome do argumento é um diretório. Em caso positivo, lista os arquivos
+# (inclusive os ocultos, exceto . e ..) em ordem de mais recente alteração primeiro
+# se o nome não for um diretório, exibe mensagem
+then
+   [ -d "$1" ] && ls "$1" -c -A -lt || echo "$1 não é um nome válido de diretório"
+else
+
+# se o número de argumentos for maior que 1, exibe mensagem
+   echo "Foram digitados $# argumentos. Digite apenas um após o nome do script $0."
+fi
+
+echo
+echo "para verificar outro diretório, execute novamente o script $0 acrescido do nome válido de um diretório."
+echo

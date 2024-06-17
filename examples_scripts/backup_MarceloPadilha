@@ -1,0 +1,12 @@
+#!/bin/bash
+#AUTOR:MARCELO PADILHA
+#POLO:SJBV
+# 
+clear
+
+if [ ! -d "/aluno/script/bkp" ]; then
+	mkdir /aluno/script/bkp
+fi
+
+find /aluno/script/*.txt -exec cp {} {}.bak \;
+mv *.bak bkp

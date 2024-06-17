@@ -1,0 +1,15 @@
+#!/bin/bash
+ #AUTOR:JOHNNI
+#POLO:SJBV
+if [ -d "bkp" ]
+then
+	echo "Diretório bkp encontrado"
+else
+	echo "Diretório bkp será criado"
+	mkdir "bkp"
+fi
+
+cp *.txt bkp
+cd bkp
+rename 's/\.txt$/\.txt\.bak/' *.txt
+cd ..

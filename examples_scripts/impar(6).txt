@@ -1,0 +1,19 @@
+﻿#!/bin/bash
+
+#Autor Roni Peterson Cunha de Alvarenga
+# PoloDiadema 
+
+
+echo "Entre com um número entre 0 e 9. "
+read numero
+# Verifica se o numero passado está entre 0 e 9
+if [ $numero -lt 10 ] && [ $numero -gt -1 ] ; then
+# Faz um teste de divisão por 2 com resto, caso seja 1 é impar caso 0 é par
+        n="$(($numero%2))"
+        case $n in
+                0) echo "par" ;;
+                1) echo "impar" ;;
+        esac
+else
+        echo "Valor Invalido"
+fi

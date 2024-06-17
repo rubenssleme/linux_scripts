@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#Autor Roni Peterson Cunha de Alvarenga
+# PoloDiadema 
+
+
+echo "Digite um nome que queira procurar na agenda"
+read NOME
+echo  "Os nomes encontrados foram:"
+# Procura com grep o argumento passado no arquivo agenda.dat
+grep -i $NOME agenda.dat
+
+
+

@@ -1,0 +1,19 @@
+#!/bin/bash
+#Autor Andre Carvalheiro Garcia 
+# PoloDiadema
+chmod +x sistema
+dir=/aluno/script/bkp
+
+if [ ! -d /aluno/script/bkp ]
+then
+	sudo mkdir /aluno/script/bkp
+	echo "criado"
+
+	cp /aluno/script/* .txt /aluno/script/bkp/
+	echo "copiado"
+	exit
+else
+	echo "ja existe"
+	cp /aluno/script/* .txt /aluno/script/bkp/
+	echo "copiado"
+fi

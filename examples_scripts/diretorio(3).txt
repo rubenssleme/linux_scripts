@@ -1,0 +1,19 @@
+﻿#! /bin/bash
+#Autor Cristiano da Silva Viana 
+# PoloDiadema 
+
+
+clear
+dir=$1
+echo "Consulta diretório digite para pesquisar"
+read dir
+
+if [ -d $dir ]; then
+echo "Encontrado diretório"
+echo`find -name -D $dir`
+else
+echo "Não foram encontrados diretórios ou arquivos, apenas caracteres" 
+fi
+sleep 2
+exit
+

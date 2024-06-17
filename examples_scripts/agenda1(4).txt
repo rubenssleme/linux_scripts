@@ -1,0 +1,12 @@
+
+
+
+
+#!/bin/bash
+
+
+#Autor Daniel Felipe Reis Apolinario
+# PoloDiadema 
+if [ "$#" -gt 0 ]; then
+    grep -i $1 agenda.dat
+fi

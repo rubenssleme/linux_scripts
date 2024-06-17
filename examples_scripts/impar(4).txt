@@ -1,0 +1,20 @@
+﻿#!/bin/bash
+#Autor Daniel Felipe Reis Apolinario
+# PoloDiadema 
+
+
+echo "Entre com um número de 0 a 9: "
+read NUM
+case $NUM in
+  0) echo "Par";;
+  1) echo "Impar";;
+  2) echo "Par";;
+  3) echo "Impar";;
+  4) echo "Par";;
+  5) echo "Impar";;
+  6) echo "Par";;
+  7) echo "Impar";;
+  8) echo "Par";;
+  9) echo "Impar";;
+  *) echo "Fora da faixa!";;
+esac

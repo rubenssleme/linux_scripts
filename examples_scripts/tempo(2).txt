@@ -1,0 +1,15 @@
+#!/bin/bash
+#Autor Andre Carvalheiro Garcia 
+# PoloDiadema
+chmod +x tempo
+HOJE=$(date +"%H") 
+if [ $HOJE -gt 4 -a $HOJE -lt 12 ]
+then
+	echo "Manha"
+elif [ $HOJE -gt 12 -a $HOJE -lt 18 ]
+then
+	echo "Tarde"
+else
+	echo "Noite"
+fi
+

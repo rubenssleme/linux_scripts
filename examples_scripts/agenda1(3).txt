@@ -1,0 +1,13 @@
+#! /bin/bash
+
+#Autor Cristiano da Silva Viana 
+# PoloDiadema 
+
+clear
+echo -n "Digite o nome: "
+read nome
+resultado=`grep -i $nome /aluno/script/agenda.dat`
+echo "Dados retornados: $resultado"
+sleep 8
+exit
+

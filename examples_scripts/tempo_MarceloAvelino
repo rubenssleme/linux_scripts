@@ -1,0 +1,15 @@
+#!/bin/sh
+#AUTOR:Marcelo Avelino
+#POLO:SJBV
+
+#hora=$(date +"%H")
+
+if [ $hora -gt 5 -a $hora -lt 12 ]
+  then
+    echo "Bom dia"
+elif [ $hora -gt 11 -a $hora -lt 18 ]
+  then
+    echo "Boa tarde"
+else
+    echo "Boa noite"
+fi

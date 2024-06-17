@@ -1,0 +1,10 @@
+#!/bin/sh
+#AUTOR:Marcelo Avelino
+#POLO:SJBV
+
+echo "Digite o nome a ser cadastrado:"
+read nome
+echo "Digite o telefone a ser cadastrado:"
+read telefone
+echo $nome $telefone >> "agenda.dat"
+#echo $telefone >> "agenda.dat"

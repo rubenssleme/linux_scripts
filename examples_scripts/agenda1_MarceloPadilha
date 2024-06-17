@@ -1,0 +1,16 @@
+#!/bin/bash
+#AUTOR:MARCELO PADILHA
+#POLO:SJBV
+# 
+clear
+echo "Digite o Nome a ser pesquisado: "
+read nome
+if [ -z $nome ] ; then
+	echo "Nome não informado!"
+	sleep 1
+	sh $0
+else
+	grep -i $nome agenda.dat 
+	sleep 2
+	sh $0
+fi

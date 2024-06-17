@@ -1,0 +1,23 @@
+#!/bin/bash
+#AUTOR:MARCELO PADILHA
+#POLO:SJBV
+# 
+clear
+echo "Digite um número entre 0 e 9"
+read numero
+
+case $numero in
+	0) echo "Número é Par!" ;;
+	1) echo "Número é Impar!" ;; 
+	2) echo "Número é Par!" ;;
+	3) echo "Número é Impar!" ;; 
+	4) echo "Número é Par!" ;;
+	5) echo "Número é Impar!" ;; 
+	6) echo "Número é Par!" ;;
+	7) echo "Número é Impar!" ;; 
+	8) echo "Número é Par!" ;;
+	9) echo "Número é Impar!" ;; 
+	*) echo "Entre com um Número válido!" ;;
+esac
+sleep 1
+sh $0

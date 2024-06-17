@@ -1,0 +1,21 @@
+#!/bin/bash
+ #AUTOR:JOHNNI
+#POLO:SJBV
+echo "Digite um número entre 0 e 9"
+read Numero
+ 
+case $Numero in
+0) Res="par" ;;
+1) Res="ímpar" ;;
+2) Res="par" ;;
+3) Res="ímpar" ;;
+4) Res="par" ;;
+5) Res="ímpar" ;;
+6) Res="par" ;;
+7) Res="ímpar" ;;
+8) Res="par" ;;
+9) Res="ímpar" ;;
+*) Res="inválido" ;;
+esac
+
+echo "Você digitou um número $Res"

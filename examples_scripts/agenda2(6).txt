@@ -1,0 +1,26 @@
+#!/bin/bash
+
+#Autor Roni Peterson Cunha de Alvarenga
+# PoloDiadema 
+
+
+echo "Digite o Nome da pessoa que deseja adcionar na Agenda"
+read NOME
+echo "Agora digite o sobrenome "
+read SOBRENOME
+echo "E finalmente o telefone"
+read TEL
+echo "O contato $NOME $SOBRENOME com o telefone $TEL foi adcionado na agenda"
+# Envia para a agenda.dat o novo dado inserido
+echo " $NOME $SOBRENOME $TEL" >> agenda.dat
+
+
+
+
+
+
+
+
+
+
+

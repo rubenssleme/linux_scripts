@@ -1,0 +1,21 @@
+﻿#!/bin/bash
+
+
+#Autor Douglas Vinicius de Rolim Gregorio
+# PoloDiadema 
+
+if [ "$#" -ne 1 ]; then
+    echo "Foram informados mais parâmetros que o esperado!"
+	exit
+fi
+
+if ! [ -d $1 ]
+then
+    echo "Não é um diretório!"
+	exit
+fi
+
+#lista arquivos da última para a primeira alteração
+echo "Lista de arquivos encontrados: "
+ls $1 -t -lh
+

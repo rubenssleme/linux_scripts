@@ -1,0 +1,42 @@
+﻿#!/bin/bash
+ #Autor Adilson Hideaki Akashi # PoloDiadema # impar - script para identificar se um número fornecido, entre 0 e 9 é par ou ímpar.
+
+# exercício de aula de Software Livre TSI UFABC 2014
+# aluno: Adilson Hideaki Akashi
+
+# limpa a tela
+clear
+
+# executa while, até que REPETIR seja igual a n (não)
+while test "$REPETIR" != n
+do 
+
+# solicita ao usuário que digite um número inteiro, de zero a nove
+echo "Digite um número inteiro, entre 0 e 9"
+
+# atribui à variável NUMERO o valor digitado pelo usuário
+read NUMERO
+
+# testa se o número digitado está no intervalo de 0 a 9. Caso positivo, o número é válido. 
+[ "$NUMERO" -ge 0 ] && [ "$NUMERO" -le 9 ] && VALIDO=s || VALIDO=n
+[ "$VALIDO" == n ] && echo "o número está fora do intervalo solicitado."
+
+# se o número é válido, testa o resto da divisão de NUMERO por 2 (%). Se o resto for 0 exibe PAR, se for 1 é ímpar 
+# se o número não for válido, pula este passo
+if [ "$VALIDO" == s ]
+then
+   case "$((NUMERO%2))" in
+   0) echo "o número $NUMERO é PAR" ;;
+   1) echo "o número $NUMERO é ÍMPAR" ;;
+   esac
+fi
+
+# para testar outro número, ou sair
+echo
+echo "Deseja testar outro número? (s/n)"
+read REPETIR
+
+# volta ao início, ou sai
+echo
+done
+clear

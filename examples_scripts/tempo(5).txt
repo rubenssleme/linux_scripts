@@ -1,0 +1,17 @@
+#!/bin/bash
+
+#Autor Douglas Vinicius de Rolim Gregorio
+# PoloDiadema 
+
+
+hora=0
+
+hora=`date +%H`
+
+if [ $hora -lt 12 ] ; then  
+  echo "Bom Dia!"
+elif [ $hora -lt 18 ] ; then
+  echo "Boa Tarde!"
+else
+  echo "Boa Noite!"
+fi

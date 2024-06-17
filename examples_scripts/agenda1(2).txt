@@ -1,0 +1,34 @@
+﻿#!/bin/bash #Autor Adilson Hideaki Akashi # PoloDiadema 
+# agenda1 - script para consulta dos dados salvos no arquivo agenda.dat
+
+# exercício de aula de Software Livre TSI UFABC 2014
+# aluno: Adilson Hideaki Akashi
+
+# executa o script enquanto não for digitado n à pergunta final
+while test "$DE_NOVO" != n
+do
+
+#limpa a tela
+clear
+
+# solicita ao usuário que digite o nome que se deseja pesquisar
+echo "Localizador de números de telefone. Digite o nome a pesquisar:"
+read NOME
+
+# limpa a tela
+clear
+
+# procura o dado digitado no arquivo agenda.dat (-i ignora o case sensitive) e exibe o resultado da busca 
+echo "A informação solicitada é:"
+grep -i "$NOME" /aluno/script/agenda.dat || echo "inexistente"
+echo
+
+# permite consultas contínuas
+echo "Deseja fazer outra busca? (s/n)"
+read DE_NOVO
+done
+
+#caso a resposta seja não (n), pára o while/do/done, e segue para sair da execução.
+echo
+echo "Caso deseje consultar novamente, execute agenda1"
+echo

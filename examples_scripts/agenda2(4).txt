@@ -1,0 +1,9 @@
+#!/bin/bash
+#Autor Daniel Felipe Reis Apolinario
+# PoloDiadema 
+
+
+
+if [ "$#" -gt 0 ]; then
+    echo "$1 $2" >> agenda.dat
+fi

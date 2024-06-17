@@ -1,0 +1,18 @@
+﻿#!/bin/bash
+#Autor Roni Peterson Cunha de Alvarenga
+# PoloDiadema 
+
+
+# Armazena o valor da hora em uma variável, após tratá-la com cut
+hora=`date +%T | cut -d":" -f1`
+# Realiza testes condicionais e verifica em qual a hora se enquadra
+if [ $hora -gt 0 ] && [ $hora -lt 6 ] ; then
+        echo "A hora é `date +%T`, Boa Madrugada"
+elif  [ $hora -gt 6 ] && [ $hora -lt 12 ] ; then
+        echo "A hora é `date +%T`, Bom Dia"
+elif [ $hora -gt 12 ] && [ $hora -lt 19 ] ; then
+        echo "A hora é `date +%T`, Boa Tarde"
+elif [ $hora -gt 19 ] && [ $hora -lt 24 ] ; then
+        echo "A hora é `date +%T`, Boa Noite"
+fi
+

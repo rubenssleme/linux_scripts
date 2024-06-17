@@ -1,0 +1,34 @@
+﻿#!/bin/bash #Autor Adilson Hideaki Akashi # PoloDiadema 
+# tempo - script para identificar período do dia
+
+# exercício de aula de Software Livre TSI UFABC 2014
+# aluno: Adilson Hideaki Akashi
+
+# limpa a tela
+clear
+
+# atribui à variável HORA o valor da hora atual 
+HORA=$(date +%H)
+
+# se a hora é menor que 12 (e consequentemente maior que 0), considera que seja o período DIA
+if [ "$HORA" -lt 12 ]
+   then
+   # e exibe a mensagem Bom dia, sem pular a linha (aguardando a informação do nome do usuário)
+   echo -n "Bom dia, "
+   else
+
+   # se não, ou seja, se for maior ou igual a 12 horas, mas menor que 18, considera que seja TARDE
+   if [ "$HORA" -lt 18 ]
+      then
+
+      # e exibe a mensagem Boa tarde, sem pular a linha (aguardando...)
+      echo -n "Boa tarde, "
+      else
+
+# se nenhuma das condições anteriores for verdadeiro, ou seja, se HORA for maior ou igual a 18, considera que seja noite
+echo -n "Boa noite, " 
+   fi
+fi
+
+# e exibe o nome do usuário, na mesma linha que a saudação
+whoami

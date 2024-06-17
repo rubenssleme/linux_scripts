@@ -1,0 +1,14 @@
+﻿#!/bin/bash
+#Autor Daniel Felipe Reis Apolinario
+# PoloDiadema 
+
+
+if [ $# -ne 1 ]; then
+  echo "Número de parâmetros errado. Saindo."
+  exit 1
+elif [ -d "$1" ]; then
+  echo "Conteúdo do diretório"
+  ls --time=atime $1
+else
+  echo "Não é um diretório"
+fi

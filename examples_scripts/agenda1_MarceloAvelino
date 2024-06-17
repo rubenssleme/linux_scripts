@@ -1,0 +1,6 @@
+#!/bin/sh
+#AUTOR:Marcelo Avelino
+#POLO:SJBV
+echo "Entre com um nome:"
+read nome
+grep $nome agenda.dat

@@ -1,0 +1,13 @@
+#!/bin/bash
+#Autor Douglas Vinicius de Rolim Gregorio
+# PoloDiadema 
+
+
+
+if ! [ -d bkp ]
+then
+    mkdir bkp
+	
+fi
+
+cp *.txt bkp -S.bkp

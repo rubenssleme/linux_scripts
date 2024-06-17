@@ -1,0 +1,15 @@
+﻿#!/bin/bash
+
+
+#Autor Daniel Felipe Reis Apolinario
+# PoloDiadema 
+tempo=`date +"%H"`
+
+if [ $tempo -ge 6 ] && [ $tempo -le 12  ]; then
+    echo "Agora é manhã"
+elif [ "$tempo" -ge 13 ] && [ $tempo -le 18 ]; then
+   echo "É tarde"
+else
+   echo "É noite"
+fi
+

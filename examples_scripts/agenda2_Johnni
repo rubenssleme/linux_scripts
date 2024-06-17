@@ -1,0 +1,22 @@
+#!/bin/bash
+#AUTOR:JOHNNI
+#POLO:SJBV
+echo "Digite o nome da pessoa"
+read Nome
+echo "Digite o telefone da pessoa"
+read Telefone
+ 
+if [ -z $Nome ] || [ -z $Telefone ]
+then
+                echo "As informações são obrigatórias"
+else
+                echo "Inserindo os dados na agenda..."
+                echo $Nome $Telefone>> agenda.dat
+                if [ $? -eq 1 ]
+                then
+                                echo "Houve um erro ao tentar inserir informações na agenda"
+                else
+                                echo "Informações inseridas com sucesso"
+                fi
+fi
+ 

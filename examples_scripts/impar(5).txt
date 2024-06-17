@@ -1,0 +1,17 @@
+﻿#!/bin/bash
+
+#Autor Douglas Vinicius de Rolim Gregorio
+# PoloDiadema 
+
+
+
+echo "Entre com um número entre 0 e 9. "
+read num
+
+num=$(( $num % 2))
+
+echo "Resultado: "
+case $num in
+1) echo "Este número é impar" ;;
+*) echo "Este número é par" ;;
+esac

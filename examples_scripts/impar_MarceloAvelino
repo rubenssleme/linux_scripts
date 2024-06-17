@@ -1,0 +1,12 @@
+#!/bin/sh
+#AUTOR:Marcelo Avelino
+#POLO:SJBV
+
+echo "Digite um número de 0 a 9:"
+read num
+
+case $num in
+ 0|2|4|6|8) echo "par";;
+ 1|3|5|7|9) echo "ímpar" ;;
+ *) echo "NÚMERO INVALIDO!" ;;
+esac

@@ -1,0 +1,11 @@
+#!/bin/sh
+#AUTOR:Marcelo Avelino
+#POLO:SJBV
+
+if [ $# -ne 1 ] ; then
+  echo "Número de parâmetros incorreto"
+elif ! [ -d $1 ] ; then
+  echo "$1 não é um diretório"
+else
+  ls -t $1
+fi

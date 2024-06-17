@@ -1,0 +1,13 @@
+#!/bin/bash
+#AUTOR:JOHNNI
+#POLO:SJBV
+ 
+if [ $# -ne 1 ] 
+then
+	echo "É necessário passar um nome de diretório como argumento"
+elif [ -d $1 ]
+then
+	ls -lt $1
+else
+	echo "O argumento passado precisa ser o nome de um diretório"
+fi

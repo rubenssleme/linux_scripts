@@ -1,0 +1,18 @@
+﻿#!/bin/bash
+#Autor Douglas Vinicius de Rolim Gregorio
+# PoloDiadema 
+
+
+# Script para inclusao de registro em arquivo
+nome=" "
+telefone=" "
+
+# Recebe nome qualquer
+echo "Digite um nome para a inclusão:"
+read nome
+
+echo "Digite um telefone para a inclusão:"
+read telefone
+
+#Adiciona variavel no arquivo
+resultado=`echo $nome" "$telefone >> agenda.dat`

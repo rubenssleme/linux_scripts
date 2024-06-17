@@ -1,0 +1,17 @@
+#!/bin/bash
+ #AUTOR:JOHNNI
+#POLO:SJBV
+echo "Digite o nome da pessoa"
+read Nome
+ 
+if [ -z $Nome ]
+then
+                echo "Não é possível fazer a busca"
+else
+                echo "Procurando $Nome na agenda..."
+                grep -i $Nome agenda.dat
+                if [ $? -eq 1 ]
+                then
+                                echo "Nenhum registro encontrado na agenda"
+                fi
+fi

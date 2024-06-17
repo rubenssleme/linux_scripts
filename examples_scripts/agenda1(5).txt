@@ -1,0 +1,14 @@
+#!/bin/bash
+#Autor Douglas Vinicius de Rolim Gregorio
+# PoloDiadema 
+
+# Script para consulta de nome em arquivo
+nome=" "
+# Recebe nome qualquer
+echo "Digite um nome para a consulta:"
+read nome
+#Busca variavel no arquivo
+resultado=`grep -n -e $nome agenda.dat`
+
+echo "Resultado: "
+echo $resultado

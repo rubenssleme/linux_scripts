@@ -1,0 +1,13 @@
+#!/bin/sh
+#AUTOR:Marcelo Avelino
+#POLO:SJBV
+
+if [ ! -d bkp ]
+then
+  mkdir bkp
+fi
+
+for arquivo in `ls *.txt`
+do
+  cp $arquivo bkp/$arquivo.bak
+done

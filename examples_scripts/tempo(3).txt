@@ -1,0 +1,13 @@
+﻿#! /bin/bash 
+#Autor Cristiano da Silva Viana 
+# PoloDiadema 
+
+clear
+if [ $(date +%k) -ge 6 -a $(date +%k) -le 11 ]; then
+echo "Bom dia, são" $(date +%H) "horas e" $(date +%M) "minutos"
+elif [ $(date +%k) -ge 12 -a $(date +%k) -le 17 ]; then
+echo "Boa tarde, são" $(date +%H) "horas e" $(date +%M) "minutos"
+else echo "Boa noite, são" $(date +%H) "horas e" $(date +%M) "minutos"
+fi
+sleep 5
+exit

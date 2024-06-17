@@ -1,0 +1,11 @@
+﻿#!/bin/bash
+
+#Autor Daniel Felipe Reis Apolinario
+# PoloDiadema 
+
+
+if [ -d "bkp" ]; then
+  find -name "*.txt" -exec cp {} bkp/{}.bak \;
+else
+  echo "Crie o diretório bkp nesta pasta"
+fi

@@ -1,0 +1,25 @@
+#!/bin/bash
+#AUTOR:MARCELO PADILHA
+#POLO:SJBV
+# 
+clear
+echo "Digite o Nome a ser incluido: "
+read nome
+if [ -z $nome ] ; then
+	echo "Nome não informado!"
+	sleep 1
+	sh $0
+else
+	echo "Digite o Telefone: "
+	read telefone
+	if [ -z $telefone ] ; then
+		echo "Telefone não informado!"
+		sleep 1
+		sh $0
+	else
+		echo $nome " " $telefone >> agenda.dat
+		echo "Nome incluido na agenda!"
+		sleep 1
+		sh $0
+	fi
+fi

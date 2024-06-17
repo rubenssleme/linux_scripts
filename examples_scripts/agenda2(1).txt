@@ -1,0 +1,66 @@
+﻿#!/bin/bash #Autor Adilson Hideaki Akashi # PoloDiadema 
+# agenda2 - script para inclusão de dados no arquivo agenda.dat
+# observe que são necessárias as devidas permissões para que o script funcione, pois este altera arquivos e conteúdos dos mesmos
+
+# exercício de aula de Software Livre TSI UFABC 2014
+# aluno: Adilson Hideaki Akashi
+
+#limpa a tela
+clear
+
+# informa a ação a realizar, e se o usuário quer mesmo prosseguir
+echo "Incrementador de agenda telefônica."
+echo "Deseja acrescentar entradas à sua agenda? (s/n)"
+read CONTINUA
+
+# prossegue continuamente enquanto o usuário quiser acrescentar nomes
+while test "$CONTINUA" != n
+do
+
+clear
+echo "Digite o nome:"
+# armazena o nome digitado na variável NOME
+read NOME
+echo
+echo "Digite o número do telefone:"
+# armazena o número digitado na variável NUMERO
+read NUMERO
+echo
+
+#exibe os dados digitados para confirmação
+echo "$NOME" "$NUMERO"
+echo "Os dados acima estão corretos? Deseja salvar? (s/n)"
+read SALVAR
+
+# se o usuário confirmar, e aceitar, grava os dados no arquivo agenda.dat
+if [ "$SALVAR" = "s" ]
+then
+echo "$NOME" "$NUMERO" >>/aluno/script/agenda.dat
+echo "aguarde..."
+sleep 1
+echo
+
+# exibe o último nome salvo efetivamente no arquivo agenda.dat, para ter certeza de que não houve erro
+echo -n "O último nome armazenado na agenda foi: "
+tail -n 1 /aluno/script/agenda.dat
+sleep 2
+
+# caso o usuário não queira salvar os dados no arquivo agenda.dat (por exemplo, se digitou errado os dados)
+else
+echo "Dados foram descartados."
+sleep 2
+fi
+echo
+
+# permite voltar ao início, para inserção de novos nomes, ou terminar a execução
+echo "Deseja acrescentar outro nome à lista? (s/n)"
+read CONTINUA
+
+# limpa a tela
+clear
+done
+
+#caso a resposta seja não (n), pára o while/do/done, e segue para sair da execução.
+echo
+echo "Caso deseje acrescentar mais nomes novamente, execute agenda2"
+echo

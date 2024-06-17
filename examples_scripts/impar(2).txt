@@ -1,0 +1,16 @@
+#!/bin/bash
+#Autor Andre Carvalheiro Garcia 
+# PoloDiadema
+chmod +x parimpar
+
+echo "Digite um número:  "
+read num
+
+mod=$(($num%2))
+
+if [ $mod -eq 1 ]
+then
+  echo "O número $num é impar!"
+   else
+    echo "O número $num é par!"
+fi 

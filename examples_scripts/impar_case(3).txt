@@ -1,0 +1,24 @@
+﻿#! /bin/bash
+
+#Autor Cristiano da Silva Viana 
+# PoloDiadema 
+
+
+clear 
+echo "digite um número entre 1 e 10: "
+read num
+case $num in
+1) echo "Você digitou o número 1, um número ímpar" ;;
+2) echo "Você digitou o número 2, um número par" ;;
+3) echo "Você digitou o número 3, um número ímpar" ;;
+4) echo "Você digitou o número 4, um número par" ;;
+5) echo "Você digitou o número 5, um número ímpar" ;;
+6) echo "Você digitou o número 6, um número par" ;;
+7) echo "Você digitou o número 7, um número ímpar" ;;
+8) echo "Você digitou o número 8, um número par" ;;
+9) echo "Você digitou o número 9, um número ímpar" ;;
+10) echo "Você digitou o número 10, um número par" ;;
+*) echo "Você digitou um número inválido, tente uma próxima vez" ;;
+esac
+sleep 5
+exit

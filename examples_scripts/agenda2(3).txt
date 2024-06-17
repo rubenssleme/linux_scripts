@@ -1,0 +1,14 @@
+#! /bin/bash
+#Autor Cristiano da Silva Viana 
+# PoloDiadema 
+
+
+clear
+echo -n "Digite o nome: "
+read nome
+echo -n "Digite o telefone: "
+read telefone
+echo $nome" "$telefone >>  /aluno/script/agenda.dat
+cat /aluno/script/agenda.dat
+sleep 5
+exit

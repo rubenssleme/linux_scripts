@@ -1,0 +1,45 @@
+﻿#!/bin/bash #Autor Adilson Hideaki Akashi # PoloDiadema 
+# backup - script para fazer backup de arquivos .txt do diretório corrente, em uma subpasta bkp
+# observação: são necessárias autorizações compatíveis para execução deste script, pois o mesmo cria diretório e arquivos.
+
+# exercício de aula de Software Livre TSI UFABC 2014
+# aluno: Adilson Hideaki Akashi
+
+#limpa a tela
+clear
+
+# atribui à variável HA_TXT a quantidade de arquivos txt existentes no corrente diretório
+HA_TXT=$(ls | grep .txt -c)
+echo -n "Localizado(s) $HA_TXT arquivo(s) .txt neste diretório. "
+
+# se houver menos que 1 arquivo txt no diretório, termina a execução
+if [ "$HA_TXT" -lt 1 ]
+   then
+   echo "A execução foi terminada."
+   echo
+   exit
+fi
+
+# do contrário, questiona o usuário sobre prosseguir com o Back-up
+echo "Será criado back-up de $HA_TXT arquivo(s) .txt deste diretório? Deseja prosseguir (s/n)"
+read INICIA
+
+# caso autorizado, inicia-se o processo
+if [ "$INICIA" = s ]
+   then
+   # verifica se existe um diretório com o nome bkp. Somente em caso negativo, cria  o diretório bkp
+   [ -d bkp ] || mkdir bkp
+
+   # copia os arquivos .txt no diretório corrente para bkp. Havendo arquivos homonimos, estes serão sobreescritos.
+   cp -f *.txt bkp
+
+   # renomeia todos os arquivos em bkp de .txt para .bkp. Havendo arquivos homônimos, estes serão sobreescritos.
+   rename -f "s/\.txt$/\.bkp/" bkp/*.txt
+   echo "Back-up concluído."
+   # caso o usuário tenha escolhido não realizar back-up, oa execução salta para este ponto
+   else
+   echo "Operação de back-up interrompida. Não foram feitas cópias dos arquivos."
+fi
+echo
+
+

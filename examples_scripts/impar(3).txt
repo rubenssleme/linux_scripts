@@ -1,0 +1,81 @@
+#! /bin/bash
+#Autor Cristiano da Silva Viana 
+# PoloDiadema 
+
+
+clear
+echo "Digite um número entre 1 e 10 e saiba se par ou impar."
+read nu
+case $nu in
+1) echo "um" ;;
+2) echo "dois" ;;
+3) echo "tres" ;;
+4) echo "quatro" ;;
+5) echo "cinco" ;;
+6) echo "seis" ;;
+7) echo "sete" ;;
+8) echo "oito" ;;
+9) echo "nove" ;;
+10) echo "dez" ;;
+*) echo "Digite um número entre 1 e 10" ;;
+esac
+
+um() {
+echo  "Você digitou o número 1, é ímpar"
+sleep 3
+exit
+}
+
+dois() {
+echo  "Você digitou o número 2, par"
+sleep 3
+exit
+}
+
+tres() {
+echo  "Você digitou o número 3, é ímpar"
+sleep 3
+exit
+}
+
+quatro() {
+echo  echo "Você digitou o número 4, par"
+sleep 3
+exit
+}
+
+cinco() {
+echo "Você digitou o número 5, é ímpar"
+sleep 3
+exit
+}
+
+seis() {
+echo "Você digitou o número 6, par"
+sleep 3
+exit
+}
+
+sete() {
+echo "Você digitou o número 7, é ímpar"
+sleep 3
+exit
+}
+
+oito() {
+echo "Você digitou o número 8, par"
+sleep 3
+exit
+}
+
+nove() {
+echo "Você digitou o número 8, par"
+sleep 3
+exit
+}
+
+dez() {
+echo "Você digitou o número 10, par"
+sleep 3
+exit
+}
