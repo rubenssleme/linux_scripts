@@ -34,7 +34,7 @@ onedriveshare
 if [ $? -ne 0 ]; then
 echo ""
 echo "Diretorio $OnedriveDIR  vazio!"
-
+bash linux_scripts/trinity_t_rsync_to_onedrive_o.sh
 else
 echo ""
 echo "Ha conteudo no diretorio! $OnedriveDIR "
