@@ -56,7 +56,6 @@ rsync -azhu --log-file='logs/rsync.log' --delete-after --ipv6 --progress  --excl
 #echo ----------------"Backup finished"---------------- >> logs/rsync.log
 date  >> logs/rsync.log
 echo
-    
 # Long listing of files in $dest to check file sizes.
 ls -lh $toOracleF >> logs/rsync.log
 echo ----------------"Backup finished"---------------- >> logs/rsync.log

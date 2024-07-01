@@ -11,7 +11,7 @@ fromTrinityT="/media/trinity_share/"
 #dir_files="/mnt/d/files"
 # Where to backup to.
 #dest="/mnt/f/files-bkp"
-toOnedriveO="onedrive/"
+toOnedriveO="/media/onedrive_share/"
 #dest_estudos_files="/mnt/f/estudos"
 #dest_files="/mnt/f/files"
     
