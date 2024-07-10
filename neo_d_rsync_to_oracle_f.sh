@@ -2,7 +2,7 @@
 ###########################################
 #
 # Backup to files using rsync  in script.
-#       neo_d_rsync_to_voyager1_f
+#       neo_d_rsync_to_oracle_f
 ###########################################
     
 # What to backup. 
@@ -35,6 +35,7 @@ day_week=("$day-$timestamp")
 #mkdir $destAnyVideo${day_week}
     
 # Print start status message.
+echo
 echo ---------------- "Rsync from Neo_D: ${fromNeoD} to Voyager1_F: $toOracleF" ---------------- >> logs/rsync.log
 date >> logs/rsync.log
 echo
@@ -58,5 +59,6 @@ date  >> logs/rsync.log
 echo
 # Long listing of files in $dest to check file sizes.
 ls -lh $toOracleF >> logs/rsync.log
+echo
 echo ----------------"Backup finished"---------------- >> logs/rsync.log
 echo
