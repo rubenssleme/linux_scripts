@@ -36,7 +36,7 @@ day_week=("$day-$timestamp")
     
 # Print start status message.
 echo
-echo ---------------- "Rsync from Neo_D: ${fromNeoD} to Voyager1_F: $toOracleF" ---------------- >> logs/rsync.log
+echo ---------------- "Rsync from Neo_D: ${fromNeoD} to Oracle_F: $toOracleF" ---------------- >> logs/rsync.log
 date >> logs/rsync.log
 echo
     
@@ -44,7 +44,7 @@ echo
 
 #tar jcvf $dest/$archive_file -P $dir_Any_Video_Converter
 #rsync -avhrz  --delete --exclude='$RECYCLE.BIN/' --exclude='/System Volume Information/'  "$dirAnyVideo"  "$destAnyVideo${day_week}"
-rsync -azhu --log-file='logs/rsync.log' --delete-after --ipv6 --progress  --exclude='$RECYCLE.BIN/' --exclude='/System Volume Information/' --exclude='DumpStack.log.tmp' --exclude='desktop.ini' --exclude='ext_hd' --exclude='files_bkp'  "$fromNeoD"  "$toOracleF"
+rsync -azhu --log-file='logs/rsync.log' --delete-after --ipv6 --progress  --exclude='$RECYCLE.BIN/' --exclude='/System Volume Information/' --exclude='DumpStack.log.tmp' --exclude='desktop.ini' --exclude='ext_hd' --exclude='bkp_files'  "$fromNeoD"  "$toOracleF"
 
 #echo ----------------"do ext_disk_voyager_01 to disk_neo"---------------- >> logs/rsync.log 
 #rsync -azhu --log-file='logs/rsync.log' --delete-after --ipv6 --progress  --exclude='$RECYCLE.BIN/' --exclude='/System Volume Information/' --exclude='DumpStack.log.tmp' --exclude='desktop.ini' --exclude='ext_hd' --exclude='files_bkp'   "$destAnyVideo" "$dirAnyVideo"  
@@ -60,5 +60,5 @@ echo
 # Long listing of files in $dest to check file sizes.
 ls -lh $toOracleF >> logs/rsync.log
 echo
-echo ----------------"Backup finished"---------------- >> logs/rsync.log
+echo ----------------"Backup to Oracle_F: finished"---------------- >> logs/rsync.log
 echo

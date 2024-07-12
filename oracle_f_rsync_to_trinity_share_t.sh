@@ -35,24 +35,30 @@ day_week=("$day-$timestamp")
 #mkdir $destAnyVideo${day_week}
     
 # Print start status message.
-echo ---------------- "Rsync from Oracle_F: ${fromOracleF} to Trinity_T: $toTrinityShareT" ---------------- >> logs/rsync.log
-date >> logs/rsync.log
 echo
-    
+echo ---------------- "Rsync from Oracle_F: ${fromOracleF} to Trinity_T: $toTrinityShareT" ------- >> logs/rsync.log
+date >> logs/rsync.log
+echo   
 # Backup the files using tar.
 
 #tar jcvf $dest/$archive_file -P $dir_Any_Video_Converter
 #rsync -avhrz  --delete --exclude='$RECYCLE.BIN/' --exclude='/System Volume Information/'  "$dirAnyVideo"  "$destAnyVideo${day_week}"
 
-rsync -azhu --delete-after --ipv6 --progress --exclude='$RECYCLE.BIN/' --exclude='/System Volume Information/' --exclude='DumpStack.log.tmp' --exclude='desktop.ini' --exclude='ext_hd' "$fromOracleF"  "$toTrinityShareT"
+#rsync -azhu --delete-after --ipv6 --progress --exclude='$RECYCLE.BIN/' --exclude='/System Volume Information/' --exclude='DumpStack.log.tmp' --exclude='desktop.ini' --exclude='ext_hd' "$fromOracleF"  "$toTrinityShareT"
+rsync -azhu --log-file='logs/rsync.log' --delete-after --ipv6 --progress  --exclude='$RECYCLE.BIN/' --exclude='/System Volume Information/' --exclude='DumpStack.log.tmp' --exclude='desktop.ini' --exclude='ext_hd'  "$fromOracleF"  "$toTrinityShareT"
 #tar jcvf $dest/$archive_file_estudos -P $dir_estudos_files
 #pwd
+#tar jcvf $dest/$archive_file_files -P $dir_files
+#tar jcvf $dest/$archive_file_estudos -P $dir_estudos_files
+
+#tar jcvf $dest/$archive_file_files -P $dir_files
+#tar jcvf $dest/$archive_file_estudos -P $dir_estudos_files
+
 #tar jcvf $dest/$archive_file_files -P $dir_files
 
 date  >> logs/rsync.log
 echo
-    
 # Long listing of files in $dest to check file sizes.
 ls -lh $toTrinityShareT >> logs/rsync.log
-echo ----------------"Backup finished"---------------- >> logs/rsync.log
+echo ----------------"Backup to Trinity_T: finished"---------------- >> logs/rsync.log
 echo

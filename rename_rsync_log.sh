@@ -14,6 +14,6 @@ mv rsync.log3 rsync.log4
 mv rsync.log2 rsync.log3
 mv rsync.log1 rsync.log2
 mv rsync.log rsync.log1
-touch rsync.log 
+#touch rsync.log 
 rm -rf rsync.log8
   
