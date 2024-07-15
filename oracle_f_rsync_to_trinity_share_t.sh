@@ -22,20 +22,43 @@ timestamp=$(date +'%d-%m-%Y-%H-%M-%S')
 day=$(date +%A)
 day_week=("$day-$timestamp")
 
-#hostname=$"video-converter"
-#estudos=$"estudos"
-#files=$"files"
+# Status de saída padrão da função trinityshare
+fromOracleDIR=/mnt/f/files/
+toTrinityShareDIR=/media/trinity_share/files/
+#find <$DIR> -type d -empty
+trinityshare() {
+  echo "" >> logs/rsync.log 
+  echo "Verificando Diretorio Trinity_share!" >> logs/rsync.log
+  ls -l $fromOracleDIR > /dev/null
+}
+################### Inicio do If Oracle ################
+trinityshare
+if [ $? -ne 0 ]; then
+# Executa caso esteja montado
+echo "Diretorio $fromOracleDIR  vazio!" >> logs/rsync.log
 
-#archive_file="$hostname-$day.tgz"
-#archive_file="$hostname-${timestamp}.tar.bz2"
-#archive_file_estudos="$estudos-${timestamp}.tar.bz2"
-#archive_file_files="$files-${timestamp}.tar.bz2"
+else
+# Executa caso esteja montado
+echo "Ha conteudo no diretorio! $fromOracleDIR " >> logs/rsync.log
 
-#Create dir por dia semana
-#mkdir $destAnyVideo${day_week}
-    
+fi
+################### Fim do If Oracle ################
+# Status de saída padrão da função onedriveshare
+onedriveshare() {
+  echo "" >> logs/rsync.log 
+  echo "Verificando Diretorio Trinity_shares!" >> logs/rsync.log
+  ls -l $toTrinityShareDIR > /dev/null
+}
+################### Inicio do If Trinity ################
+onedriveshare
+if [ $? -ne 0 ]; then
+echo "Diretorio $toTrinityShareDIR  vazio!" >> logs/rsync.log
+
+else
+# Executa caso esteja montado
+echo "Ha conteudo no diretorio! $toTrinityShareDIR " >> logs/rsync.log
 # Print start status message.
-echo
+echo >> logs/rsync.log
 echo ---------------- "Rsync from Oracle_F: ${fromOracleF} to Trinity_T: $toTrinityShareT" ------- >> logs/rsync.log
 date >> logs/rsync.log
 echo   
@@ -57,8 +80,12 @@ rsync -azhu --log-file='logs/rsync.log' --delete-after --ipv6 --progress  --excl
 #tar jcvf $dest/$archive_file_files -P $dir_files
 
 date  >> logs/rsync.log
-echo
+echo >> logs/rsync.log
 # Long listing of files in $dest to check file sizes.
 ls -lh $toTrinityShareT >> logs/rsync.log
 echo ----------------"Backup to Trinity_T: finished"---------------- >> logs/rsync.log
-echo
+echo >> logs/rsync.log
+
+#bash linux_scripts/trinity_t_rsync_to_onedrive_o.sh
+fi
+################### Fim do If Trinity ################
