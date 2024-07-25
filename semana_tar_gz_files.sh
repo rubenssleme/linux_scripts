@@ -9,8 +9,9 @@
 dir_estudos_files="/mnt/d/estudos"
 dir_Any_Video_Converter="/mnt/d/Any_Video_Converter"
 dir_files="/mnt/d/files"
+dir_docs="/mnt/d/Documentos"
 # Where to backup to.
-dest="/mnt/f/files_bkp"
+dest="/mnt/f/bkp_files/"
     
 # Create archive filename.
 timestamp=$(date +'%d-%m-%Y-%H-%M-%S')
@@ -23,10 +24,12 @@ dest_final="$dest/${day_week}"
 hostname=$"video-converter"
 estudos=$"estudos"
 files=$"files"
+docs="documentos"
 
 #archive_file="$hostname-$day.tgz"
 
 archive_file="$hostname-${timestamp}.tar.bz2"
+archive_file_docs="$docs-${timestamp}.tar.bz2"
 archive_file_estudos="$estudos-${timestamp}.tar.bz2"
 archive_file_files="$files-${timestamp}.tar.bz2"
 
@@ -44,6 +47,8 @@ echo
 # Backup the files using tar.
 pwd
 tar jcvf $dest_final/$archive_file -P $dir_Any_Video_Converter
+pwd
+tar jcvf $dest_final/$archive_file_docs -P $dir_docs
 pwd
 tar jcvf $dest_final/$archive_file_estudos -P $dir_estudos_files
 pwd
