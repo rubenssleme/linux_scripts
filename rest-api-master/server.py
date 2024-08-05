@@ -10,11 +10,23 @@ api = Api(app)
 
 
 
-class Users(Resource):
+class Provento(Resource):
     def get(self):
         conn = mysql.connector.connect(host='localhost', user='root', password='913328', database='draftdatabase')
         cursor = conn.cursor(pymysql.cursors.DictCursor)
-        cursor.execute("select * from user")
+        cursor.execute("select * from proventos_recebidos")
+        rows = cursor.fetchall()
+        resp = jsonify(rows)
+        resp.status_code = 200
+        return resp  
+        cursor.close() 
+        conn.close()
+
+class ProventoSum(Resource):
+    def get(self):
+        conn = mysql.connector.connect(host='localhost', user='root', password='913328', database='draftdatabase')
+        cursor = conn.cursor(pymysql.cursors.DictCursor)
+        cursor.execute("SELECT Produto,Preco_unitario,Valor_liquido, SUM(Valor_liquido) AS Valor  FROM draftdatabase.proventos_recebidos GROUP BY Produto;")
         rows = cursor.fetchall()
         resp = jsonify(rows)
         resp.status_code = 200
@@ -22,8 +34,9 @@ class Users(Resource):
         cursor.close() 
         conn.close()
               
-		    
-api.add_resource(Users, '/users') 
+
+api.add_resource(Provento, '/proventos') 		    
+api.add_resource(ProventoSum, '/proventos_sum') 
 if __name__ == '__main__':
     app.run()
 
