@@ -13,7 +13,7 @@ fromNeoD="/mnt/d/"
 # Where to backup to.
 #dest="/mnt/f/files-bkp"
 #destAnyVideo="/mnt/f/"
-toOracleF="/mnt/f/"
+toMaraM="/mnt/m/"
 #dest_estudos_files="/mnt/f/estudos"
 #dest_files="/mnt/f/files"
     
@@ -36,7 +36,7 @@ day_week=("$day-$timestamp")
     
 # Print start status message.
 echo
-echo ---------------- "Rsync from Neo_D: ${fromNeoD} to Oracle_F: $toOracleF" ---------------- >> logs/rsync.log
+echo ---------------- "Rsync from Neo_D: ${fromNeoD} to Mara_m: $toMaraM" ---------------- >> logs/rsync.log
 date >> logs/rsync.log
 echo
     
@@ -44,7 +44,7 @@ echo
 
 #tar jcvf $dest/$archive_file -P $dir_Any_Video_Converter
 #rsync -avhrz  --delete --exclude='$RECYCLE.BIN/' --exclude='/System Volume Information/'  "$dirAnyVideo"  "$destAnyVideo${day_week}"
-rsync -azhu --log-file='logs/rsync.log' --delete-after --ipv6 --progress  --exclude='$RECYCLE.BIN/' --exclude='/System Volume Information/' --exclude='DumpStack.log.tmp' --exclude='desktop.ini' --exclude='ext_hd' --exclude='bkp_files'  "$fromNeoD"  "$toOracleF"
+rsync -azhu --log-file='logs/rsync.log' --delete-after --ipv6 --progress  --exclude='$RECYCLE.BIN/' --exclude='/System Volume Information/' --exclude='DumpStack.log.tmp' --exclude='desktop.ini' --exclude='ext_hd' --exclude='bkp_files'  "$fromNeoD"  "$toMaraM"
 
 #echo ----------------"do ext_disk_voyager_01 to disk_neo"---------------- >> logs/rsync.log 
 #rsync -azhu --log-file='logs/rsync.log' --delete-after --ipv6 --progress  --exclude='$RECYCLE.BIN/' --exclude='/System Volume Information/' --exclude='DumpStack.log.tmp' --exclude='desktop.ini' --exclude='ext_hd' --exclude='files_bkp'   "$destAnyVideo" "$dirAnyVideo"  
@@ -55,10 +55,10 @@ rsync -azhu --log-file='logs/rsync.log' --delete-after --ipv6 --progress  --excl
 
 # Print end status message.
 #echo ----------------"Backup finished"---------------- >> logs/rsync.log
-date  >> logs/rsync.log
 echo
 # Long listing of files in $dest to check file sizes.
-ls -lh $toOracleF >> logs/rsync.log
+ls -lh $toMaraM >> logs/rsync.log
 echo
 echo ----------------"Backup to Oracle_F: finished"---------------- >> logs/rsync.log
 echo
+date  >> logs/rsync.log
