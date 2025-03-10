@@ -4,8 +4,8 @@
 # Backup to files using rsync  in script.
 #       neo_d_rsync_to_oracle_f
 ###########################################
-    
-# What to backup. 
+
+# What to backup.
 #dirAnyVideo="/mnt/d/"
 fromNeoD="/mnt/d/"
 #dir_estudos_files="/mnt/d/estudos"
@@ -16,7 +16,7 @@ fromNeoD="/mnt/d/"
 toMaraM="/mnt/m/"
 #dest_estudos_files="/mnt/f/estudos"
 #dest_files="/mnt/f/files"
-    
+
 # Create archive filename.
 timestamp=$(date +'%d-%m-%Y-%H-%M-%S')
 day=$(date +%A)
