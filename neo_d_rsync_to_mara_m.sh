@@ -33,13 +33,13 @@ day_week=("$day-$timestamp")
 
 #Create dir por dia semana
 #mkdir $destAnyVideo${day_week}
-    
+
 # Print start status message.
 echo
 echo ---------------- "Rsync from Neo_D: ${fromNeoD} to Mara_m: $toMaraM" ---------------- >> logs/rsync.log
 date >> logs/rsync.log
 echo
-    
+
 # Backup the files using tar.
 
 #tar jcvf $dest/$archive_file -P $dir_Any_Video_Converter
