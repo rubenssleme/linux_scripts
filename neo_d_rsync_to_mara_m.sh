@@ -62,3 +62,4 @@ echo
 echo ----------------"Backup to Oracle_F: finished"---------------- >> logs/rsync.log
 echo
 date  >> logs/rsync.log
+echo ----------------"Rubens Leme"--------------------------------- >> logs/rsync.log
