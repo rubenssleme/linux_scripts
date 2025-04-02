@@ -74,7 +74,7 @@ rsync -azhu --log-file='logs/rsync.log' --delete-after --ipv6 --progress  --excl
 #tar jcvf $dest/$archive_file_files -P $dir_files
 #tar jcvf $dest/$archive_file_estudos -P $dir_estudos_files
 
-#tar jcvf $dest/$archive_file_files -P $dir_files --exclude='projetos'
+#tar jcvf $dest/$archive_file_files -P $dir_files --exclude=projetos'
 
 date  >> logs/rsync.log
 echo >> logs/rsync.log
