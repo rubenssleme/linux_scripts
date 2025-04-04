@@ -14,9 +14,9 @@ documentos="/mnt/d/Documentos"
 # Where to backup to.
 
 
-dest_android_files="/mnt/m"
-dest_any_video_converter="/mnt/m"
-dest_documentos="/mnt/m/"
+dest_android_files="/mnt/p/paige-share"
+dest_any_video_converter="/mnt/p/paige-share"
+dest_documentos="/mnt/p/paige-share"
 #dest_files="/mnt/m/files"
 
 

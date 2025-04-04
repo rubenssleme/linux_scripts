@@ -6,17 +6,19 @@
 ###########################################
 cd ~
 # What to backup.
+
+estudos="/mnt/d/estudos"
+files="/mnt/d/files"
+iso_s="/mnt/d/iso_s"
+#documentos="/mnt/d/Documentos"
 #dirAnyVideo="/mnt/d/"
 
-android_files="/mnt/d/android_files"
-any_video_converter="/mnt/d/Any_Video_Converter"
-documentos="/mnt/d/Documentos"
 # Where to backup to.
 
 
-dest_android_files="/mnt/m"
-dest_any_video_converter="/mnt/m"
-dest_documentos="/mnt/m/"
+dest_estudos="/mnt/p/paige-share"
+dest_files="/mnt/p/paige-share"
+dest_iso_s="/mnt/p/paige-share"
 #dest_files="/mnt/m/files"
 
 
@@ -49,18 +51,18 @@ echo
 #rsync -avhrz  --delete --exclude='$RECYCLE.BIN/' --exclude='/System Volume Information/'  "$dirAnyVideo"  "$destAnyVideo${day_week}"
 #rsync -azhu --log-file='logs/rsync.log' --delete-after --ipv6 --progress    --exclude='.git' --exclude='downloads'  --exclude='ubuntubkp'  --exclude='$RECYCLE.BIN/' --exclude='/System Volume Information/' --exclude='DumpStack.log.tmp' --exclude='desktop.ini' --exclude='ext_hd' --exclude='bkp_files'  "$fromNeoD"  "$toMaraM"
 
-echo ---------------- Do "$android_files" to "$dest_android_files""/android_files" ---------------- >> logs/rsync.log 
-rsync -azhu --log-file='logs/rsync.log' --delete-after --ipv6 --progress  --exclude='.git/*' --exclude='$RECYCLE.BIN/' --exclude='/System Volume Information/' --exclude='DumpStack.log.tmp' --exclude='desktop.ini' --exclude='ext_hd' --exclude='files_bkp'   "$android_files"  "$dest_android_files"
+echo ---------------- Do "$estudos" to "$dest_estudos""/estudos" ---------------- >> logs/rsync.log 
+rsync -azhu --log-file='logs/rsync.log' --delete-after --ipv6 --progress --exclude '.git/' --exclude='$RECYCLE.BIN/' --exclude='/System Volume Information/' --exclude='DumpStack.log.tmp' --exclude='desktop.ini' --exclude='ext_hd' --exclude='files_bkp'   "$estudos"  "$dest_estudos"
 echo ----------------"Backup finished"---------------- >> logs/rsync.log
 echo
 
-echo ---------------- Do "$any_video_converter" to "$dest_any_video_converter""/any_video_converter" ---------------- >> logs/rsync.log 
-rsync -azhu --log-file='logs/rsync.log' --delete-after --ipv6 --progress  --exclude='.git/*' --exclude='$RECYCLE.BIN/' --exclude='/System Volume Information/' --exclude='DumpStack.log.tmp' --exclude='desktop.ini' --exclude='ext_hd' --exclude='files_bkp'   "$any_video_converter"  "$dest_any_video_converter"
+echo ---------------- Do "$files" to "$dest_files""/files" ---------------- >> logs/rsync.log 
+rsync -azhu --log-file='logs/rsync.log' --delete-after --ipv6 --progress --exclude '.git/' --exclude='$RECYCLE.BIN/' --exclude='/System Volume Information/' --exclude='DumpStack.log.tmp' --exclude='desktop.ini' --exclude='ext_hd' --exclude='files_bkp'   "$files"  "$dest_files"
 echo ----------------"Backup finished"---------------- >> logs/rsync.log
 echo
 
-echo ---------------- Do "$documentos" to "$dest_documentos""/Documentos" ---------------- >> logs/rsync.log 
-rsync -azhu --log-file='logs/rsync.log' --delete-after --ipv6 --progress  --exclude='.git/*' --exclude='$RECYCLE.BIN/' --exclude='/System Volume Information/' --exclude='DumpStack.log.tmp' --exclude='desktop.ini' --exclude='ext_hd' --exclude='files_bkp'   "$documentos"  "$dest_documentos"
+echo ---------------- Do "$iso_s" to "$dest_iso_s""/iso_s" ---------------- >> logs/rsync.log 
+rsync -azhu --log-file='logs/rsync.log' --delete-after --ipv6 --progress --exclude '.git/' --exclude='$RECYCLE.BIN/' --exclude='/System Volume Information/' --exclude='DumpStack.log.tmp' --exclude='desktop.ini' --exclude='ext_hd' --exclude='files_bkp'   "$iso_s"  "$dest_iso_s"
 echo ----------------"Backup finished"---------------- >> logs/rsync.log
 echo
 
@@ -69,7 +71,7 @@ echo
 
 #tar jcvf $dest/$archive_file_estudos -P $dir_estudos_files
 #pwd
-#tar jcvf $dest/$archive_file_files -P $dir_files
+#tar jcvf $dest/$archive_file_files -P $dir_files .git
 
 # Print end status message.
 echo ----------------"Backup finished"---------------- >> logs/rsync.log

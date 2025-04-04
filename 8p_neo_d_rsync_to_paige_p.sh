@@ -6,17 +6,19 @@
 ###########################################
 cd ~
 # What to backup.
+
+Mozilla_Thunderbird="/mnt/d/Mozilla_Thunderbird"
+notebook_act="/mnt/d/notebook_act"
+wsl_backup="/mnt/d/wsl_backup"
+#documentos="/mnt/d/Documentos"
 #dirAnyVideo="/mnt/d/"
 
-android_files="/mnt/d/android_files"
-any_video_converter="/mnt/d/Any_Video_Converter"
-documentos="/mnt/d/Documentos"
 # Where to backup to.
 
 
-dest_android_files="/mnt/m"
-dest_any_video_converter="/mnt/m"
-dest_documentos="/mnt/m/"
+dest_Mozilla_Thunderbird="/mnt/p/paige-share"
+dest_notebook_act="/mnt/p/paige-share"
+dest_wsl_backup="/mnt/p/paige-share"
 #dest_files="/mnt/m/files"
 
 
@@ -49,18 +51,18 @@ echo
 #rsync -avhrz  --delete --exclude='$RECYCLE.BIN/' --exclude='/System Volume Information/'  "$dirAnyVideo"  "$destAnyVideo${day_week}"
 #rsync -azhu --log-file='logs/rsync.log' --delete-after --ipv6 --progress    --exclude='.git' --exclude='downloads'  --exclude='ubuntubkp'  --exclude='$RECYCLE.BIN/' --exclude='/System Volume Information/' --exclude='DumpStack.log.tmp' --exclude='desktop.ini' --exclude='ext_hd' --exclude='bkp_files'  "$fromNeoD"  "$toMaraM"
 
-echo ---------------- Do "$android_files" to "$dest_android_files""/android_files" ---------------- >> logs/rsync.log 
-rsync -azhu --log-file='logs/rsync.log' --delete-after --ipv6 --progress  --exclude='.git/*' --exclude='$RECYCLE.BIN/' --exclude='/System Volume Information/' --exclude='DumpStack.log.tmp' --exclude='desktop.ini' --exclude='ext_hd' --exclude='files_bkp'   "$android_files"  "$dest_android_files"
+echo ---------------- Do "$Mozilla_Thunderbird" to "$dest_Mozilla_Thunderbird""/Mozilla_Thunderbird" ---------------- >> logs/rsync.log 
+rsync -azhu --log-file='logs/rsync.log' --delete-after --ipv6 --progress  --exclude='.git/*' --exclude='$RECYCLE.BIN/' --exclude='/System Volume Information/' --exclude='DumpStack.log.tmp' --exclude='desktop.ini' --exclude='ext_hd' --exclude='files_bkp'   "$Mozilla_Thunderbird"  "$dest_Mozilla_Thunderbird"
 echo ----------------"Backup finished"---------------- >> logs/rsync.log
 echo
 
-echo ---------------- Do "$any_video_converter" to "$dest_any_video_converter""/any_video_converter" ---------------- >> logs/rsync.log 
-rsync -azhu --log-file='logs/rsync.log' --delete-after --ipv6 --progress  --exclude='.git/*' --exclude='$RECYCLE.BIN/' --exclude='/System Volume Information/' --exclude='DumpStack.log.tmp' --exclude='desktop.ini' --exclude='ext_hd' --exclude='files_bkp'   "$any_video_converter"  "$dest_any_video_converter"
+echo ---------------- Do "$notebook_act" to "$dest_notebook_act""/notebook_act" ---------------- >> logs/rsync.log 
+rsync -azhu --log-file='logs/rsync.log' --delete-after --ipv6 --progress  --exclude='.git/*' --exclude='$RECYCLE.BIN/' --exclude='/System Volume Information/' --exclude='DumpStack.log.tmp' --exclude='desktop.ini' --exclude='ext_hd' --exclude='files_bkp'   "$notebook_act"  "$dest_notebook_act"
 echo ----------------"Backup finished"---------------- >> logs/rsync.log
 echo
 
-echo ---------------- Do "$documentos" to "$dest_documentos""/Documentos" ---------------- >> logs/rsync.log 
-rsync -azhu --log-file='logs/rsync.log' --delete-after --ipv6 --progress  --exclude='.git/*' --exclude='$RECYCLE.BIN/' --exclude='/System Volume Information/' --exclude='DumpStack.log.tmp' --exclude='desktop.ini' --exclude='ext_hd' --exclude='files_bkp'   "$documentos"  "$dest_documentos"
+echo ---------------- Do "$wsl_backup" to "$dest_wsl_backup""/wsl_backup" ---------------- >> logs/rsync.log 
+rsync -azhu --log-file='logs/rsync.log' --delete-after --ipv6 --progress  --exclude='.git/*' --exclude='$RECYCLE.BIN/' --exclude='/System Volume Information/' --exclude='DumpStack.log.tmp' --exclude='desktop.ini' --exclude='ext_hd' --exclude='files_bkp'   "$wsl_backup"  "$dest_wsl_backup"
 echo ----------------"Backup finished"---------------- >> logs/rsync.log
 echo
 
@@ -69,7 +71,7 @@ echo
 
 #tar jcvf $dest/$archive_file_estudos -P $dir_estudos_files
 #pwd
-#tar jcvf $dest/$archive_file_files -P $dir_files
+#tar jcvf $dest/$archive_file_files -P $dir_files .git
 
 # Print end status message.
 echo ----------------"Backup finished"---------------- >> logs/rsync.log

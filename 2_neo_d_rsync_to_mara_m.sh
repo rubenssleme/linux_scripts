@@ -52,17 +52,17 @@ echo
 #rsync -azhu --log-file='logs/rsync.log' --delete-after --ipv6 --progress    --exclude='.git' --exclude='downloads'  --exclude='ubuntubkp'  --exclude='$RECYCLE.BIN/' --exclude='/System Volume Information/' --exclude='DumpStack.log.tmp' --exclude='desktop.ini' --exclude='ext_hd' --exclude='bkp_files'  "$fromNeoD"  "$toMaraM"
 
 echo ---------------- Do "$estudos" to "$dest_estudos""/estudos" ---------------- >> logs/rsync.log 
-rsync -azhu --log-file='logs/rsync.log' --delete-after --ipv6 --progress  --exclude='$RECYCLE.BIN/' --exclude='/System Volume Information/' --exclude='DumpStack.log.tmp' --exclude='desktop.ini' --exclude='ext_hd' --exclude='files_bkp'   "$estudos"  "$dest_estudos"
+rsync -azhu --log-file='logs/rsync.log' --delete-after --ipv6 --progress --exclude '.git/' --exclude='$RECYCLE.BIN/' --exclude='/System Volume Information/' --exclude='DumpStack.log.tmp' --exclude='desktop.ini' --exclude='ext_hd' --exclude='files_bkp'   "$estudos"  "$dest_estudos"
 echo ----------------"Backup finished"---------------- >> logs/rsync.log
 echo
 
 echo ---------------- Do "$files" to "$dest_files""/files" ---------------- >> logs/rsync.log 
-rsync -azhu --log-file='logs/rsync.log' --delete-after --ipv6 --progress  --exclude='$RECYCLE.BIN/' --exclude='/System Volume Information/' --exclude='DumpStack.log.tmp' --exclude='desktop.ini' --exclude='ext_hd' --exclude='files_bkp'   "$files"  "$dest_files"
+rsync -azhu --log-file='logs/rsync.log' --delete-after --ipv6 --progress --exclude '.git/' --exclude='$RECYCLE.BIN/' --exclude='/System Volume Information/' --exclude='DumpStack.log.tmp' --exclude='desktop.ini' --exclude='ext_hd' --exclude='files_bkp'   "$files"  "$dest_files"
 echo ----------------"Backup finished"---------------- >> logs/rsync.log
 echo
 
 echo ---------------- Do "$iso_s" to "$dest_iso_s""/iso_s" ---------------- >> logs/rsync.log 
-rsync -azhu --log-file='logs/rsync.log' --delete-after --ipv6 --progress --exclude='/.git/' --exclude='$RECYCLE.BIN/' --exclude='/System Volume Information/' --exclude='DumpStack.log.tmp' --exclude='desktop.ini' --exclude='ext_hd' --exclude='files_bkp'   "$iso_s"  "$dest_iso_s"
+rsync -azhu --log-file='logs/rsync.log' --delete-after --ipv6 --progress --exclude '.git/' --exclude='$RECYCLE.BIN/' --exclude='/System Volume Information/' --exclude='DumpStack.log.tmp' --exclude='desktop.ini' --exclude='ext_hd' --exclude='files_bkp'   "$iso_s"  "$dest_iso_s"
 echo ----------------"Backup finished"---------------- >> logs/rsync.log
 echo
 

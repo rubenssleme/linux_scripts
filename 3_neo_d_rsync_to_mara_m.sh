@@ -52,17 +52,17 @@ echo
 #rsync -azhu --log-file='logs/rsync.log' --delete-after --ipv6 --progress    --exclude='.git' --exclude='downloads'  --exclude='ubuntubkp'  --exclude='$RECYCLE.BIN/' --exclude='/System Volume Information/' --exclude='DumpStack.log.tmp' --exclude='desktop.ini' --exclude='ext_hd' --exclude='bkp_files'  "$fromNeoD"  "$toMaraM"
 
 echo ---------------- Do "$Mozilla_Thunderbird" to "$dest_Mozilla_Thunderbird""/Mozilla_Thunderbird" ---------------- >> logs/rsync.log 
-rsync -azhu --log-file='logs/rsync.log' --delete-after --ipv6 --progress  --exclude='$RECYCLE.BIN/' --exclude='/System Volume Information/' --exclude='DumpStack.log.tmp' --exclude='desktop.ini' --exclude='ext_hd' --exclude='files_bkp'   "$Mozilla_Thunderbird"  "$dest_Mozilla_Thunderbird"
+rsync -azhu --log-file='logs/rsync.log' --delete-after --ipv6 --progress  --exclude='.git/*' --exclude='$RECYCLE.BIN/' --exclude='/System Volume Information/' --exclude='DumpStack.log.tmp' --exclude='desktop.ini' --exclude='ext_hd' --exclude='files_bkp'   "$Mozilla_Thunderbird"  "$dest_Mozilla_Thunderbird"
 echo ----------------"Backup finished"---------------- >> logs/rsync.log
 echo
 
 echo ---------------- Do "$notebook_act" to "$dest_notebook_act""/notebook_act" ---------------- >> logs/rsync.log 
-rsync -azhu --log-file='logs/rsync.log' --delete-after --ipv6 --progress  --exclude='$RECYCLE.BIN/' --exclude='/System Volume Information/' --exclude='DumpStack.log.tmp' --exclude='desktop.ini' --exclude='ext_hd' --exclude='files_bkp'   "$notebook_act"  "$dest_notebook_act"
+rsync -azhu --log-file='logs/rsync.log' --delete-after --ipv6 --progress  --exclude='.git/*' --exclude='$RECYCLE.BIN/' --exclude='/System Volume Information/' --exclude='DumpStack.log.tmp' --exclude='desktop.ini' --exclude='ext_hd' --exclude='files_bkp'   "$notebook_act"  "$dest_notebook_act"
 echo ----------------"Backup finished"---------------- >> logs/rsync.log
 echo
 
 echo ---------------- Do "$wsl_backup" to "$dest_wsl_backup""/wsl_backup" ---------------- >> logs/rsync.log 
-rsync -azhu --log-file='logs/rsync.log' --delete-after --ipv6 --progress --exclude='/.git/' --exclude='$RECYCLE.BIN/' --exclude='/System Volume Information/' --exclude='DumpStack.log.tmp' --exclude='desktop.ini' --exclude='ext_hd' --exclude='files_bkp'   "$wsl_backup"  "$dest_wsl_backup"
+rsync -azhu --log-file='logs/rsync.log' --delete-after --ipv6 --progress  --exclude='.git/*' --exclude='$RECYCLE.BIN/' --exclude='/System Volume Information/' --exclude='DumpStack.log.tmp' --exclude='desktop.ini' --exclude='ext_hd' --exclude='files_bkp'   "$wsl_backup"  "$dest_wsl_backup"
 echo ----------------"Backup finished"---------------- >> logs/rsync.log
 echo
 
